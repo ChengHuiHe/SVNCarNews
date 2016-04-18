@@ -1,0 +1,40 @@
+//
+//  DetailViewController.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "DetailViewController.h"
+
+@interface DetailViewController ()<UIWebViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UIWebView *detailWebView;
+
+@end
+
+@implementation DetailViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // 90070.html
+//    self.resourceLoc;
+    
+    self.detailWebView.delegate = self;
+
+    
+  NSString *strURL = [NSString stringWithFormat:@"%@%@.html",KDetail_URL,self.resourceLoc];
+    
+    CHLog(@"%@",strURL);
+    
+    
+  [self.detailWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:strURL]]];
+    
+    
+}
+
+
+@end

@@ -1,0 +1,26 @@
+//
+//  DatabaseSingle.h
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "HomeModel.h"
+
+@interface DatabaseSingle : NSObject
+
+
++(instancetype)shareSingleton;
+
+
+// 插入数据
+-(void)insertHomeCar:(HomeModel*)model;
+// 删除数据
+- (void)deleteHomeCar:(HomeModel*)model;
+// 查询数据
+-(NSArray *)searchDatabaseWithTitle;
+
+@end

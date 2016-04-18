@@ -1,0 +1,24 @@
+//
+//  AllHeader.pch
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#ifndef AllHeader_pch
+#define AllHeader_pch
+
+#import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "JSONModel.h"
+#import "Address.h"
+#import "Defination.h"
+#import "UIImageView+WebCache.h"
+#import "QFHttpManager.h"
+#import "DatabaseSingle.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* AllHeader_pch */

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCollectionViewCell" id="gTV-IL-0wX" customClass="MyCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lA9-tB-CYB" userLabel="BigImage View">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="127"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="127" id="1ME-GM-5zx"/>
+                            <constraint firstAttribute="width" constant="140" id="fhu-XV-oDS"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="FjD-vX-FQU" userLabel="smallView">
+                        <rect key="frame" x="11" y="86" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="WGB-T2-1Cm"/>
+                            <constraint firstAttribute="width" constant="25" id="qzh-Qc-wvz"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-GC-hzf">
+                        <rect key="frame" x="0.0" y="127" width="140" height="38"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="212312" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-WP-AfW">
+                        <rect key="frame" x="32" y="173" width="45.5" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="3yC-g4-Iep"/>
+                            <constraint firstAttribute="width" constant="45.5" id="g4m-Gm-4D1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5M-qy-okO">
+                        <rect key="frame" x="110" y="166" width="30" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Ed8-jo-MIA"/>
+                            <constraint firstAttribute="height" constant="28" id="e2m-Tc-rFd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="zK7-6f-9UY" userLabel="ViewImage View">
+                        <rect key="frame" x="6" y="170" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="mgU-yX-1Z2"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="blueArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="aUq-v4-xzE" userLabel="timeImageView">
+                        <rect key="frame" x="83.5" y="170" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Wb8-8W-WVA"/>
+                            <constraint firstAttribute="height" constant="20" id="g1u-Y9-iPr"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="0O2-GC-hzf" firstAttribute="top" secondItem="FjD-vX-FQU" secondAttribute="bottom" constant="16" id="2Y0-gC-2wv"/>
+                <constraint firstAttribute="trailing" secondItem="lA9-tB-CYB" secondAttribute="trailing" id="AUR-aX-EdZ"/>
+                <constraint firstAttribute="bottom" secondItem="zK7-6f-9UY" secondAttribute="bottom" constant="10" id="B3q-Aq-qmt"/>
+                <constraint firstItem="o7M-WP-AfW" firstAttribute="leading" secondItem="zK7-6f-9UY" secondAttribute="trailing" constant="6" id="BBa-wA-UIL"/>
+                <constraint firstItem="D5M-qy-okO" firstAttribute="leading" secondItem="aUq-v4-xzE" secondAttribute="trailing" constant="6.5" id="Drb-Hy-iaa"/>
+                <constraint firstAttribute="bottom" secondItem="o7M-WP-AfW" secondAttribute="bottom" constant="13" id="E4n-gL-LSn"/>
+                <constraint firstItem="zK7-6f-9UY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="JIj-UM-bPx"/>
+                <constraint firstItem="lA9-tB-CYB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KRM-Io-D8p"/>
+                <constraint firstItem="0O2-GC-hzf" firstAttribute="width" secondItem="lA9-tB-CYB" secondAttribute="width" id="NZA-4O-MdS"/>
+                <constraint firstItem="0O2-GC-hzf" firstAttribute="top" secondItem="lA9-tB-CYB" secondAttribute="bottom" id="QeV-0B-ZZN"/>
+                <constraint firstItem="aUq-v4-xzE" firstAttribute="top" secondItem="0O2-GC-hzf" secondAttribute="bottom" constant="11" id="Qpi-Nc-kNb"/>
+                <constraint firstItem="FjD-vX-FQU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="RH7-Sg-LoR"/>
+                <constraint firstItem="aUq-v4-xzE" firstAttribute="top" secondItem="0O2-GC-hzf" secondAttribute="bottom" constant="5" id="US9-qR-MNP"/>
+                <constraint firstItem="zK7-6f-9UY" firstAttribute="top" secondItem="0O2-GC-hzf" secondAttribute="bottom" constant="5" id="dGL-Yd-cIs"/>
+                <constraint firstAttribute="bottom" secondItem="aUq-v4-xzE" secondAttribute="bottom" constant="10" id="e3y-i5-6Zt"/>
+                <constraint firstItem="lA9-tB-CYB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gbc-je-Pe5"/>
+                <constraint firstAttribute="bottom" secondItem="D5M-qy-okO" secondAttribute="bottom" constant="6" id="hRe-2J-cQN"/>
+                <constraint firstAttribute="trailing" secondItem="0O2-GC-hzf" secondAttribute="trailing" id="sCi-Zp-2Ph"/>
+                <constraint firstAttribute="trailing" secondItem="D5M-qy-okO" secondAttribute="trailing" id="zOS-wQ-F9A"/>
+                <constraint firstItem="0O2-GC-hzf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zkw-7m-Pea"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Qpi-Nc-kNb"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="DurationLabel" destination="D5M-qy-okO" id="Lij-pw-hMq"/>
+                <outlet property="ImageLinkImageView" destination="lA9-tB-CYB" id="F9U-BD-fIJ"/>
+                <outlet property="TitleLabel" destination="0O2-GC-hzf" id="f2L-p4-PfI"/>
+                <outlet property="TotalVisitLabel" destination="o7M-WP-AfW" id="FWc-ki-vQL"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="blueArrow.png" width="23" height="60"/>
+    </resources>
+</document>

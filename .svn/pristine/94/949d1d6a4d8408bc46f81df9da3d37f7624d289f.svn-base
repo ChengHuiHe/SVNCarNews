@@ -1,0 +1,37 @@
+//
+//  HomeModel.h
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "PictUrlListMoel.h"
+
+
+//@protocol PictUrlListMoel <NSObject>
+//
+//@end
+
+@interface HomeModel : JSONModel
+
+/**
+ *  要传值的ID号
+ */
+@property (nonatomic,copy) NSString *resourceLoc;
+
+@property (nonatomic,copy) NSString *title;
+
+@property (nonatomic,copy) NSString *publishTime;
+
+@property (nonatomic,copy) NSString *origin;
+
+@property (nonatomic,copy) NSString *readCount;
+
+// 图片---数组
+@property (nonatomic,strong) NSArray<PictUrlListMoel *> *picUrlList;
+
+@end
+

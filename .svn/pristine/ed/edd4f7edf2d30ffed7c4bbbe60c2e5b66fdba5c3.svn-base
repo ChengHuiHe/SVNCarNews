@@ -1,0 +1,19 @@
+//
+//  CarVideoTableViewCell.h
+//  CarNews
+//
+//  Created by Chenghui on 16/3/4.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface CarVideoTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+// cell 里面的collectionView
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (nonatomic,strong) NSMutableArray *carListArr;
+
+
+@end

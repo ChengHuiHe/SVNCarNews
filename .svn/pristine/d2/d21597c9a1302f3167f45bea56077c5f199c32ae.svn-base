@@ -1,0 +1,18 @@
+//
+//  CarLsitMdoel.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/4.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "CarLsitMdoel.h"
+
+@implementation CarLsitMdoel
+
++(BOOL)propertyIsOptional:(NSString *)propertyName
+{
+    return YES;
+}
+
+@end

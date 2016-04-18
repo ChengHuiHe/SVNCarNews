@@ -1,0 +1,66 @@
+//
+//  Address.h
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#ifndef Address_h
+#define Address_h
+
+/********************首页************************/
+// 广告 --- region:北京
+// http://123.57.66.127/qctt-api/5.1/index.php/Adverqctt/getFocus?region=%E5%8C%97%E4%BA%AC&classId=0
+
+#define KAdv_URL @"page=3&classId=0"
+// 1首页 --- 每日推荐 --- 到时拼接id
+// —- POST —-(page=0)
+//http://123.57.66.127/qctt-api/5.1/index.php/News/getNewsList?page=1&classId=0
+
+#define KEveryDay_URL @"http://123.57.66.127/qctt-api/5.1/index.php/News/getNewsList"
+
+// 1.1详情 ——（传值） resourceLoc: “90055”,,到时拼接：90070.html
+// http://m.qctt.cn/html/mobile/news_new/showapi5-90070.html
+#define KDetail_URL @"http://m.qctt.cn/html/mobile/news_new/showapi5-"
+
+
+//1.1—— (POST)汽车头条----暂时不写
+//http://123.57.66.127/qctt-api/5.1/index.php/Cars/getNewCarList?page=0&
+
+
+
+// 2.——-二手车*（汽车报价大全）—cid、pindex、psize
+//http://taoche.app.yiche.com/CarList.ashx?cid=201&pindex=1&psize=20&sign=43fc6265d3d0f8973464c8f5e4624383%20HTTP/1.1
+
+#define KErshou_URL @"http://taoche.app.yiche.com/CarList.ashx?cid=201&pindex=1&psize=20&sign=43fc6265d3d0f8973464c8f5e4624383"
+
+// 2.1汽车详情（）--- 传值ucarid和城市名称
+// GET http://taoche.app.yiche.com/CarDetail.ashx?ucarid=8765452&sign=ed20f60accc8f5c42c31a4c769b13a49 HTTP/1.1
+
+#define KCarDetail_URL @"http://taoche.app.yiche.com/CarDetail.ashx?ucarid=8765452&sign=ed20f60accc8f5c42c31a4c769b13a49 HTTP/1.1"
+
+
+// 3.精彩视频 —-  汽车报价大全
+//http://api.app.yiche.com/webapi/api.ashx?method=bit.videocatlist&catids=1%2C6%2C7&sign=22fdf38331d801f19015e09f5f6a0b83 HTTP/
+
+#define KVideo_URL @"http://api.app.yiche.com/webapi/api.ashx?method=bit.videocatlist&catids=1%2C6%2C7&sign=22fdf38331d801f19015e09f5f6a0b83"
+
+
+// 1.1 视频评论
+//http://api.app.yiche.com/webapi/api.ashx?method=bit.videocommentlist&videoid=414644&ishot=1&pageindex=1&pagesize=3&sign=ccf598aa379a3f24d2b98117fcbcb104 HTTP/1.1
+
+
+#define KVideo_Conment_URL @"http://api.app.yiche.com/webapi/api.ashx?method=bit.videocommentlist&videoid=414644&ishot=1&pageindex=1&pagesize=3&sign=ccf598aa379a3f24d2b98117fcbcb104"
+
+
+
+
+//1.2点击视频
+//http://cybertran.baidu.com/mediasdk/video?method=sdkauth&ak=2E3SyHOGzLzAXs7NDKDQrD3P&time=1456909957999&sign=8c9916aed28c6e30081221fdacd65144&uuid=34544CA2975ABFF28E740D4928608F7A&platform=Android HTTP/1.1
+
+
+
+
+
+#endif /* Address_h */

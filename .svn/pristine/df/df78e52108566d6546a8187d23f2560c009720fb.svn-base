@@ -1,0 +1,49 @@
+//
+//  CarVideoTableViewCell.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/4.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "CarVideoTableViewCell.h"
+
+#import "CarVideoCollectionCell.h"
+#import "CarLsitMdoel.h"
+
+@implementation CarVideoTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+-(void)setCarListArr:(NSMutableArray *)carListArr
+{
+    _carListArr = [NSMutableArray new];
+    
+    [_carListArr addObjectsFromArray:_carListArr];
+    
+    // 刷新数据
+    [self.collectionView reloadData];
+}
+
+
+#pragma collectionView 的代理方法
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.carListArr.count;
+}
+
+
+- (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CarVideoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarVideoCollectionCell" forIndexPath:indexPath];
+    
+    CarLsitMdoel *model = [[CarLsitMdoel alloc] init];
+    model = self.carListArr[indexPath.row];
+    [cell setCarListModel:model];
+    
+    return cell;
+}
+
+@end

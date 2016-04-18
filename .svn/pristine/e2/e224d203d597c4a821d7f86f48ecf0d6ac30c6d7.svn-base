@@ -1,0 +1,123 @@
+//
+//  DatabaseSingle.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "DatabaseSingle.h"
+#import "FMDB.h"
+
+@interface DatabaseSingle ()
+
+
+#pragma MARK --- 别忘了
+@property (nonatomic,strong)FMDatabase *database;
+
+@end
+
+@implementation DatabaseSingle
+
+static DatabaseSingle *single = nil;
+static dispatch_once_t token = 0;
+
++(instancetype)shareSingleton{
+    
+    
+    dispatch_once(&token, ^{
+        
+        single = [DatabaseSingle new];
+        
+    });
+    
+    return single;
+}
+
+// 当实例化一个对象的时候,如果调用了alloc方法,系统就会调用 allocWithZone
+// zone 就代表一片内存
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    
+    if (!single) {
+        
+        single = [super allocWithZone:zone];
+        
+    }
+    return single;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        
+        _database = [[FMDatabase alloc] initWithPath:[NSHomeDirectory() stringByAppendingString:@"/Documents/Car.rdb"]];
+        
+        CHLog(@"%@",NSHomeDirectory());
+        
+        if (![_database open]) {
+            CHLog(@"数据库打开失败！");
+        }
+        
+        if(![_database executeUpdate:@"create table if not exists CarList (id integer primary key autoincrement,title text,publishTime text,origin text,readCount text,picUrlList txt)"])
+        {
+            CHLog(@"创建表失败");
+        }
+
+    }
+    
+    return self;
+}
+
+
+-(void)insertHomeCar:(HomeModel*)model
+{
+    if (![self.database executeUpdate:@"insert into CarList (title,publishTime,origin,readCount,picUrlList) values (?,?,?,?,?)",model.title,model.publishTime,model.origin,model.readCount,model.picUrlList]) {
+        
+        CHLog(@"插入失败");
+        
+    }
+
+
+}
+
+-(void)deleteHomeCar:(HomeModel *)model
+{
+    if (![self.database executeUpdate:@"delete from CarList where title = ?",model.title]) {
+        
+        CHLog(@"删除失败");
+        
+    }
+
+}
+
+// 查询数据
+-(NSArray *)searchDatabaseWithTitle
+{
+    FMResultSet *set = [self.database executeQuery:@"select * from CarList"];
+    NSMutableArray *newArr = [NSMutableArray new];
+    while ([set next]) {
+
+        // 要是用CoreData就好方便了
+        HomeModel *homeModel = [HomeModel new];
+    
+        homeModel.title = [set stringForColumn:@"title"];
+        homeModel.publishTime = [set stringForColumn:@"publishTime"];
+        homeModel.origin = [set stringForColumn:@"origin"];
+        homeModel.readCount = [set stringForColumn:@"readCount"];
+        
+#warning mark --- to do
+        // ???
+//        homeModel.picUrlList = [set stringForColumnIndex:0];
+        
+        // 添加到数组
+        [newArr addObject:homeModel];
+    }
+    
+    CHLog(@"%ld",newArr.count);
+    
+    return newArr;
+}
+
+@end

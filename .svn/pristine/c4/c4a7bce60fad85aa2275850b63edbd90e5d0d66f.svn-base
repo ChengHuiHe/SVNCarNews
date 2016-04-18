@@ -1,0 +1,214 @@
+//
+//  HomeTableViewController.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "HomeTableViewController.h"
+#import "HomeCell.h"
+#import "DetailViewController.h"
+#import "HomeModel.h"
+
+@interface HomeTableViewController ()
+
+
+@property (nonatomic,assign)int page;
+
+@property(nonatomic,strong)NSMutableArray *dataListArray;
+
+@property (nonatomic,strong)HomeModel *homeModel;
+
+@end
+
+@implementation HomeTableViewController
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+ 
+    self.page = 1;
+
+    //一:从本地读取旧数据展示
+    [self loadDataFromDatabase];
+
+    
+    /*UI相关*/
+    [self addRefreshView];
+
+
+    // 请求数据
+    [self requestData];
+    
+    // 检查网络转态
+    [self updateNetWorkStatus];
+
+}
+
+#pragma mark- 数据库相关
+- (void)loadDataFromDatabase
+{
+    DatabaseSingle *single = [DatabaseSingle shareSingleton];
+    
+    // 装载旧数据
+    [self.dataListArray addObjectsFromArray:[single searchDatabaseWithTitle]];
+    
+    CHLog(@"%ld",self.dataListArray.count);
+    // 如果有数据，就刷新数据
+    if (self.dataListArray.count!=0) {
+        [self.tableView reloadData];
+    }
+}
+
+#pragma mark -- 检查网络转态
+- (void)updateNetWorkStatus
+{
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    
+    [manager startMonitoring];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            UIAlertController *alerController = [UIAlertController alertControllerWithTitle:nil message:@"网络错误！！！" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
+            [alerController addAction:resetAction];
+            
+            [self presentViewController:alerController animated:YES completion:nil];
+            
+        }else {
+        
+            // 请求网络
+            [self requestData];
+        }
+    }];
+}
+
+#pragma mark -- 刷新
+// 添加上下拉刷新
+- (void)addRefreshView
+{
+    __weak typeof (self) weakSelf = self;
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        // 下拉刷新
+        weakSelf.page = 1;
+        [weakSelf requestData];
+        
+    }];
+    
+    // 上拉刷新
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        
+        weakSelf.page++;
+        [weakSelf requestData];
+        
+    }];
+}
+
+#pragma mark-- 请求数据
+- (void)requestData
+{
+    // ?page=%d&classId=0
+    NSString *strUrl= [NSString stringWithFormat:@"%@?page=%d&classId=0",KEveryDay_URL,self.page];
+    
+    [QFHttpManager getWithURL:strUrl andParamDic:nil returnBlock:^(NSURLResponse *response, NSError *error, id data) {
+        
+        if (error) {
+            NSLog(@"errror:%@",[error description]);
+        }else {
+        
+            //三:更新数据
+            //清空数组当中旧数据
+            if (self.dataListArray.count!=0) {
+                for (HomeModel *model in self.dataListArray) {
+                    
+                    //清除本地旧数据
+                    [[DatabaseSingle shareSingleton] deleteHomeCar:model];
+                }
+                [self.dataListArray removeAllObjects];
+            }
+            
+            NSArray *dataArray = [data[@"data"] objectForKey:@"newsList"];
+            NSLog(@"%@",dataArray);
+            
+            for (NSDictionary *dict in dataArray) {
+                
+                self.homeModel = [[HomeModel alloc] initWithDictionary:dict error:nil];
+                [self.dataListArray addObject:self.homeModel];
+                
+                // 本地插入数据
+                [[DatabaseSingle shareSingleton] insertHomeCar:self.homeModel];
+            }
+         
+            // 刷新UI
+            [self.tableView reloadData];
+            
+            // 结束刷新
+            [self.tableView.header endRefreshing];
+            [self.tableView.footer endRefreshing];
+        }
+        
+    }];
+}
+
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    
+    if (self.dataListArray.count == 0) {
+        return 1;
+    }
+    return self.dataListArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCell" forIndexPath:indexPath];
+    
+    NSLog(@"%@",self.dataListArray);
+    
+    if (self.dataListArray.count!=0) {
+        cell.homeModel = self.dataListArray[indexPath.row];
+    }
+    
+    return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    CHLog(@"%ld",(long)indexPath.row);
+    
+    
+    
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    
+    self.homeModel = self.dataListArray[indexPath.row];
+    
+    detailVC.resourceLoc = self.homeModel.resourceLoc;
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+
+#pragma mark -- 懒加载
+-(NSMutableArray *)dataListArray
+{
+    if (_dataListArray == nil) {
+        _dataListArray = [[NSMutableArray alloc] init];
+    }
+    return _dataListArray;
+}
+
+- (HomeModel *)homeModel
+{
+    if (_homeModel == nil) {
+        _homeModel = [[HomeModel alloc] init];
+    }
+    return _homeModel;
+}
+
+@end

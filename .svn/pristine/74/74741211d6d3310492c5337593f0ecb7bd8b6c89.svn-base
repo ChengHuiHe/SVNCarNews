@@ -1,0 +1,17 @@
+//
+//  PictUrlListMoel.h
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface PictUrlListMoel : JSONModel
+
+//@property (nonatomic,strong) NSArray *picUrlList;
+
+//@property (nonatomic,copy)NSString *strURL;
+
+@end

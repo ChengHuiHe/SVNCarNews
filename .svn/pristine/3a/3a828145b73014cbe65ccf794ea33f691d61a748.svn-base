@@ -1,0 +1,22 @@
+//
+//  CarVideoModel.h
+//  CarNews
+//
+//  Created by Chenghui on 16/3/4.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface CarVideoModel : JSONModel
+
+/**
+ *  原创节目(头部标题)
+ */
+@property (nonatomic,copy) NSString *CatName;
+
+
+@property (nonatomic,strong) NSArray *CatList;
+
+
+@end

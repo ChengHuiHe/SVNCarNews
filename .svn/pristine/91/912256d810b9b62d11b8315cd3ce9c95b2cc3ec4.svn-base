@@ -1,0 +1,58 @@
+//
+//  HomeCell.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/3.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "HomeCell.h"
+
+@interface HomeCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *icomImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *originLabel;
+@property (weak, nonatomic) IBOutlet UILabel *readCountLabel;
+
+
+@end
+
+@implementation HomeCell
+
+- (void)awakeFromNib {
+
+    // 设置头像圆角
+    self.icomImageView.layer.masksToBounds = YES;
+    self.icomImageView.layer.borderWidth = 1.0f;
+    self.icomImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.icomImageView.layer.cornerRadius = 5.0;
+}
+
+
+-(void)setHomeModel:(HomeModel *)homeModel
+{
+    _homeModel = homeModel;
+
+    
+    [self.icomImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",homeModel.picUrlList[0]]]];
+    
+    
+    self.titleLabel.text = homeModel.title;
+    self.timeLabel.text = homeModel.publishTime;
+    self.originLabel.text = [NSString stringWithFormat:@"来自%@",homeModel.origin];
+    self.readCountLabel.text = [NSString stringWithFormat:@"阅读:%@次",homeModel.readCount];
+}
+
+
+
+
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

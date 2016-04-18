@@ -1,0 +1,25 @@
+//
+//  CarVideoCollectionCell.m
+//  CarNews
+//
+//  Created by Chenghui on 16/3/4.
+//  Copyright © 2016年 Chenghui. All rights reserved.
+//
+
+#import "CarVideoCollectionCell.h"
+
+@implementation CarVideoCollectionCell
+
+
+-(void)setCarListModel:(CarLsitMdoel *)carListModel
+{
+    _carListModel = carListModel;
+    
+    [self.ImageLinkImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",carListModel.ImageLink]]];
+    self.TitleLavel.text = carListModel.Title;
+    self.TotalVisitLabel.text = carListModel.TotalVisit;
+    self.DurationLavel.text = carListModel.Duration;
+    
+}
+
+@end

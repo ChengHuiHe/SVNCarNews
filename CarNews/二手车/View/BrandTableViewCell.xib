@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrandTableViewCell" rowHeight="65" id="KGk-i7-Jjw" customClass="BrandTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="114" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="114" height="75.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-E4-9Ye">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-V1-9uM">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="L4a-hW-uVM"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="L4a-hW-uVM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="L4a-hW-uVM"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RE-mN-7Lf">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27.5" id="NuI-GU-BWm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NuI-GU-BWm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="NuI-GU-BWm"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4RE-mN-7Lf" secondAttribute="trailing" id="5Im-rj-Zmd"/>
+                            <constraint firstItem="IQl-V1-9uM" firstAttribute="leading" secondItem="MM6-E4-9Ye" secondAttribute="leading" constant="15" id="BfI-kE-fvb">
+                                <variation key="heightClass=regular-widthClass=compact" constant="23"/>
+                            </constraint>
+                            <constraint firstAttribute="width" constant="100" id="CQg-zX-1KM"/>
+                            <constraint firstItem="4RE-mN-7Lf" firstAttribute="leading" secondItem="MM6-E4-9Ye" secondAttribute="leading" id="LbI-it-9oY"/>
+                            <constraint firstItem="IQl-V1-9uM" firstAttribute="top" secondItem="MM6-E4-9Ye" secondAttribute="top" id="PCM-HL-Zgc"/>
+                            <constraint firstAttribute="bottom" secondItem="4RE-mN-7Lf" secondAttribute="bottom" id="hBv-qe-L5j"/>
+                            <constraint firstAttribute="trailing" secondItem="IQl-V1-9uM" secondAttribute="trailing" constant="16" id="uXB-z5-lp2">
+                                <variation key="heightClass=regular-widthClass=compact" constant="23"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IQl-V1-9uM"/>
+                                <exclude reference="4RE-mN-7Lf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CQg-zX-1KM"/>
+                                <exclude reference="5Im-rj-Zmd"/>
+                                <exclude reference="LbI-it-9oY"/>
+                                <exclude reference="hBv-qe-L5j"/>
+                                <exclude reference="BfI-kE-fvb"/>
+                                <exclude reference="PCM-HL-Zgc"/>
+                                <exclude reference="uXB-z5-lp2"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IQl-V1-9uM"/>
+                                <include reference="4RE-mN-7Lf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="CQg-zX-1KM"/>
+                                <include reference="5Im-rj-Zmd"/>
+                                <include reference="LbI-it-9oY"/>
+                                <include reference="hBv-qe-L5j"/>
+                                <include reference="BfI-kE-fvb"/>
+                                <include reference="PCM-HL-Zgc"/>
+                                <include reference="uXB-z5-lp2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MM6-E4-9Ye" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ppj-4O-v37"/>
+                    <constraint firstItem="MM6-E4-9Ye" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UnZ-10-r9D"/>
+                    <constraint firstAttribute="bottom" secondItem="MM6-E4-9Ye" secondAttribute="bottom" id="hY5-YN-qXF"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="MM6-E4-9Ye"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="Ppj-4O-v37"/>
+                        <exclude reference="UnZ-10-r9D"/>
+                        <exclude reference="hY5-YN-qXF"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="MM6-E4-9Ye"/>
+                    </mask>
+                    <mask key="constraints">
+                        <include reference="Ppj-4O-v37"/>
+                        <include reference="UnZ-10-r9D"/>
+                        <include reference="hY5-YN-qXF"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bphotoImageView" destination="IQl-V1-9uM" id="mAh-B3-jE0"/>
+                <outlet property="nameLabel" destination="4RE-mN-7Lf" id="X7r-VK-LBA"/>
+            </connections>
+            <point key="canvasLocation" x="152" y="257"/>
+        </tableViewCell>
+    </objects>
+</document>
