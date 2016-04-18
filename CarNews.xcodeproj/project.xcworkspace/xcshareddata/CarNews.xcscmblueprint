@@ -1,16 +1,16 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "a2474dc6-962d-4a88-80c7-6d9da8ab2cbe++3386",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F7DF273AC584661CE34FDCE18653AEED83A2B152",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "a2474dc6-962d-4a88-80c7-6d9da8ab2cbe++3386" : {
+    "F7DF273AC584661CE34FDCE18653AEED83A2B152" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "a2474dc6-962d-4a88-80c7-6d9da8ab2cbe++3386" : 0
+    "F7DF273AC584661CE34FDCE18653AEED83A2B152" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2069A24F-7B59-4077-9BCA-23038E5A91CF",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "a2474dc6-962d-4a88-80c7-6d9da8ab2cbe++3386" : "SVNCarNews\/"
+    "F7DF273AC584661CE34FDCE18653AEED83A2B152" : "SVNCarNews\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "CarNews",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,7 +19,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/127.0.0.1",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a2474dc6-962d-4a88-80c7-6d9da8ab2cbe++3386"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F7DF273AC584661CE34FDCE18653AEED83A2B152"
     }
   ]
 }
