@@ -14,7 +14,7 @@
     AVPlayerLayer * playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.avplayer];
     设置 playerLayer 的frame 就可以，实现简单的播放了。
 # 多表嵌套：本项目中使用到一个 表视图里面嵌套一个 collectionView。
- ![image](https://github.com/SVNCarNews/1.png)
+ ![image](https://github.com/ChengHuiHe/SVNCarNews/raw/master/1.png)
 
  - 实现思路是，先创建一张表，设置数据源和代理，把cell的图片 和 标题设置在一个合理的范围内：例如100的宽。然后，在这张表上，添加一个子控制器。该
  子控制器是 collectionView，然后，实现子控制器的代理和数据源，就可以了。
