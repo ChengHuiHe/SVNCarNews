@@ -1,5 +1,6 @@
 # SVNCarNews
 # 这个是 《车-资讯》个人项目，喜欢的话给个星，谢谢！
+![image](https://github.com/ChengHuiHe/SVNCarNews/blob/master/123.gif ) 
 - 首页是常规的新闻类展示。
 - 广告的实现：第一种是使用通知，当点击了某张图片时，发送一个通知，这个通知有个notice 属性，（它可以带参数），把值传道下一个界面。
 第二种是block，事实上原理也一样。这里我采用block。
