@@ -1,5 +1,7 @@
 # SVNCarNews
 # 这个是 《车-资讯》个人项目，喜欢的话给个星，谢谢！
+#  由于使用了第三方的SDK，因此，工程有点大，有时间的话，采用CocoaPod 
+
 ![image](https://github.com/ChengHuiHe/SVNCarNews/blob/master/123.gif ) 
 - 首页是常规的新闻类展示。
 - 广告的实现：第一种是使用通知，当点击了某张图片时，发送一个通知，这个通知有个notice 属性，（它可以带参数），把值传道下一个界面。
@@ -47,8 +49,9 @@
         
         [self parserArray:array];//解析数据
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"%@", error);
         
-    }];
+        }];
+    ### 该项目还有些可以优化的地方，看时间吧！个人博客：http://www.jianshu.com/users/73c4609cb3ab/latest_articles
