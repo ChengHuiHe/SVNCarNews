@@ -54,4 +54,6 @@
         NSLog(@"%@", error);
         
         }];
+    ### 添加QQ登录，有时间，直接使用人家公司服务器登录；
+    ![image](https://github.com/ChengHuiHe/SVNCarNews/blob/master/QQ登录.png)
     ### 该项目还有些可以优化的地方，看时间吧！个人博客：http://www.jianshu.com/users/73c4609cb3ab/latest_articles
