@@ -54,4 +54,5 @@
         NSLog(@"%@", error);
         
         }];
+    ![image](https://github.com/ChengHuiHe/SVNCarNews/blob/master/QQ登录.png) 
     ### 该项目还有些可以优化的地方，看时间吧！个人博客：http://www.jianshu.com/users/73c4609cb3ab/latest_articles
